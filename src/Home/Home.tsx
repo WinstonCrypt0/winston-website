@@ -3,6 +3,7 @@ import React from "react";
 import avatar from "./avatar.png";
 
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import ContactMailOutlinedIcon from "@material-ui/icons/ContactMailOutlined";
 import {
 	Container,
 	AppBar,
@@ -14,7 +15,9 @@ import {
 	CssBaseline,
 	Card,
 	CardMedia,
-  CardContent,
+	Link,
+	CardContent,
+	Icon,
 } from "@material-ui/core";
 
 interface TabPanelProps {
@@ -68,19 +71,14 @@ function Home() {
 						centered
 					>
 						<Tab label="Home" />
-						<Tab label="Other" />
+						<Tab label="More" />
 					</Tabs>
 				</Typography>
 			</AppBar>
 			<Container color="inherit">
 				<TabPanel value={tabId} index={0}>
-					<Box component="span" m={1} p={1}>
-						<Grid
-							container
-							direction="column"
-							justify="center"
-							alignItems="center"
-						>
+					<Box component="span" mx={1} mt={1} px={1}>
+						<Box mx="auto">
 							<Card>
 								<CardContent>
 									<Grid
@@ -100,12 +98,13 @@ function Home() {
 										</Typography>
 										<Typography variant="h6" color="textSecondary">
 											From Los Angeles, CA
-										</Typography>{" "}
+										</Typography>
 									</Grid>
 								</CardContent>
 							</Card>
-						</Grid>
+						</Box>
 						<Box mt={3} p={1}>
+							<Typography variant="h6">About Me </Typography>
 							<Typography variant="body1">
 								Hi, I’m Winston and I am very passionate about piano, guitar,
 								robotics, and computer science! I’ve always had a passion for
@@ -113,13 +112,26 @@ function Home() {
 								always loved playing with lego's and contraptions. Technology
 								fascinates me because the world revolves around it!
 							</Typography>
-            </Box>
+						</Box>
 
-            
+						<Box mt={2} px={2}>
+							<Typography variant="h6">
+
+								<ContactMailOutlinedIcon /> Contact me
+							</Typography>
+							<Typography variant="body1">
+
+								Email me at
+								<Link href="emailto:iniesta2719@gmail.com" color="inherit">
+									iniesta2719@gmail.com
+								</Link>
+							</Typography>
+						</Box>
 					</Box>
 				</TabPanel>
+
 				<TabPanel value={tabId} index={1}>
-					<b> Coming Soon... </b>
+					<b> Coming Soon... till then explore the Home tab </b>
 				</TabPanel>
 			</Container>
 		</ThemeProvider>
