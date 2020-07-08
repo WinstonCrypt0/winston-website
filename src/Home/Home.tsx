@@ -152,7 +152,7 @@ function Home() {
 							<Typography variant='h5'>About Me </Typography>
 							<Typography variant='body1'>
 								Hi, I’m Winston and I am very passionate about Piano, Guitar,
-								Robotics, and Computer Science! I’ve always had a passion for
+								Robotics, and Computer science! I’ve always had a passion for
 								STEM and Engineering. Ever since I was a little kid, I have
 								always loved playing with Lego's and contraptions. Technology
 								fascinates me because the world revolves around it!
