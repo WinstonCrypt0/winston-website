@@ -1,0 +1,27 @@
+.marker-text {
+    font-family: "Permanent Marker", cursive ;
+    animation: color-change 5s infinite   alternate-reverse ;
+}
+
+.blue-pink-gradient-bg {
+   background: rgb(91,70,255);
+background: linear-gradient(45deg, rgba(91,70,255,1) 0%, rgba(196,74,244,1) 47%, rgba(255,78,232,1) 100%);
+}
+
+@keyframes color-change {
+    0% {
+        color : rgb(0,0,50)
+    }
+    25% {
+        color : rgb(50, 0, 0)
+    }
+    50% {
+        color : rgb( 0 , 50 , 0 )
+    }
+    75% {
+        color: rgb(0,50,50 );
+    }
+    100% {
+        color: black;
+    }
+}

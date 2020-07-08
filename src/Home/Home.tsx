@@ -1,9 +1,11 @@
 import React from "react";
 
+import "./Home.css";
+
 import avatar from "./avatar.png";
 
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
-import ContactMailOutlinedIcon from "@material-ui/icons/ContactMailOutlined";
+import MusicNoteTwoToneIcon from "@material-ui/icons/MusicNoteTwoTone";
 import {
 	Container,
 	AppBar,
@@ -18,6 +20,7 @@ import {
 	Link,
 	CardContent,
 	Icon,
+	Paper,
 } from "@material-ui/core";
 
 interface TabPanelProps {
@@ -31,17 +34,12 @@ function TabPanel(props: TabPanelProps) {
 
 	return (
 		<div
-			role="tabpanel"
+			role='tabpanel'
 			hidden={value !== index}
 			id={`wrapped-tabpanel-${index}`}
 			aria-labelledby={`wrapped-tab-${index}`}
-			{...other}
-		>
-			{value === index && (
-				<Box p={3}>
-					<Typography>{children}</Typography>
-				</Box>
-			)}
+			{...other}>
+			{value === index && <Box p={3}>{children}</Box>}
 		</div>
 	);
 }
@@ -49,7 +47,20 @@ function TabPanel(props: TabPanelProps) {
 function Home() {
 	const theme = createMuiTheme({
 		palette: {
-			type: "dark",
+			primary: { main: "#0091EA" },
+			secondary: { main: "#000", contrastText: "#FAFAFA" },
+		},
+		typography: {
+			h4: {
+				fontFamily: "Permanent Marker, cursive",
+				fontWeight: 300,
+			},
+			h5: {
+				fontFamily: "Dancing Script, cursive",
+			},
+			h6: {
+				color: "#000",
+			},
 		},
 	});
 
@@ -62,50 +73,74 @@ function Home() {
 	return (
 		<ThemeProvider theme={theme}>
 			<CssBaseline />
-			<AppBar position="static" color="inherit">
-				<Typography variant="h6">
-					<Tabs
-						value={tabId}
-						onChange={handleTabChange}
-						aria-label="Tabs"
-						centered
-					>
-						<Tab label="Home" />
-						<Tab label="More" />
-					</Tabs>
+			<AppBar position='sticky' color='inherit'>
+				<Typography variant='h6'>
+					<Grid container direction='row'>
+						<Grid item sm={2} alignItems='center'>
+							<Icon>
+								<MusicNoteTwoToneIcon />
+							</Icon>
+						</Grid>
+						<Grid item>
+							<Tabs value={tabId} onChange={handleTabChange} aria-label='Tabs'>
+								<Tab label='Home' />
+								<Tab label='More' />
+							</Tabs>
+						</Grid>
+					</Grid>
 				</Typography>
 			</AppBar>
-			<Container color="inherit">
+			<Container color='inherit'>
 				<TabPanel value={tabId} index={0}>
-					<Box component="span" mx={1} mt={1} px={1}>
-						<Box mx="auto">
-							<Card>
+					<Box component='span' mx={1} mt={1} px={1}>
+						<Box mx='auto'>
+							<Card className='blue-pink-gradient-bg' raised>
 								<CardContent>
 									<Grid
 										container
-										direction="column"
-										justify="center"
-										alignItems="center"
-									>
-										<CardMedia>
-											<img src={avatar} alt="Winston Iskandar" />
-										</CardMedia>
-										<Typography variant="h5" color="textPrimary">
-											Winston Iskandar
-										</Typography>
-										<Typography variant="h6" color="textSecondary">
-											Age: 14
-										</Typography>
-										<Typography variant="h6" color="textSecondary">
-											From Los Angeles, CA
-										</Typography>
+										direction='row'
+										justify='center'
+										alignItems='center'
+										spacing={4}>
+										<Grid
+											item
+											sm={6}
+											container
+											direction='row'
+											justify='center'
+											alignItems='center'>
+											<CardMedia>
+												<img src={avatar} alt='Winston Iskandar' />
+											</CardMedia>
+										</Grid>
+										<Grid
+											item
+											sm={6}
+											container
+											direction='column'
+											justify='center'
+											alignItems='center'>
+											<Typography
+												align='center'
+												variant='h4'
+												color='textPrimary'
+												className='marker-text'>
+												<b>Winston Iskandar</b>
+											</Typography>
+											<Typography align='center' variant='h6'>
+												Age: 14
+											</Typography>
+											<Typography align='center' variant='h6'>
+												From Los Angeles, CA
+											</Typography>
+										</Grid>
 									</Grid>
 								</CardContent>
 							</Card>
 						</Box>
 						<Box mt={3} p={1}>
-							<Typography variant="h6">About Me </Typography>
-							<Typography variant="body1">
+							<Typography variant='h5'>About Me </Typography>
+							<Typography variant='body1'>
 								Hi, I’m Winston and I am very passionate about piano, guitar,
 								robotics, and computer science! I’ve always had a passion for
 								STEM and Engineering. Ever since I was a little kid, I have
@@ -115,14 +150,14 @@ function Home() {
 						</Box>
 
 						<Box mt={2} px={2}>
-							<Typography variant="h6">
-
-								<ContactMailOutlinedIcon /> Contact me
-							</Typography>
-							<Typography variant="body1">
-
-								Email me at
-								<Link href="emailto:iniesta2719@gmail.com" color="inherit">
+							<Typography variant='h5'>Contact me</Typography>
+							<Typography variant='body1'>
+								Email me at{" "}
+								<Link
+									href='emailto:iniesta2719@gmail.com'
+									target='_blank'
+									rel='noreferrer noopener'
+									color='inherit'>
 									iniesta2719@gmail.com
 								</Link>
 							</Typography>
