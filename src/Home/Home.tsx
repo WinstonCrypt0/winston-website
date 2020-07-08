@@ -180,8 +180,47 @@ function Home() {
 								Technology fascinates me because the world revolves around it!
 							</Typography>
 						</Box>
+{/*
+						<Box my={2} height={500}>
+							<div
+								id='carouselExampleInterval'
+								className='carousel slide '
+								data-ride='carousel'>
+								<div className='carousel-inner'>
+									<div className='carousel-item active' data-interval='10000'>
+										<img src={guitar} className='d-block w-100' alt='guitar' />
+									</div>
+									<div className='carousel-item' data-interval='2000'>
+										<img src='...' className='d-block w-100' alt='...' />
+									</div>
+									<div className='carousel-item'>
+										<img src='...' className='d-block w-100' alt='...' />
+									</div>
+								</div>
+								<a
+									className='carousel-control-prev'
+									href='#carouselExampleInterval'
+									role='button'
+									data-slide='prev'>
+									<span
+										className='carousel-control-prev-icon'
+										aria-hidden='true'></span>
+									<span className='sr-only'>Previous</span>
+								</a>
+								<a
+									className='carousel-control-next'
+									href='#carouselExampleInterval'
+									role='button'
+									data-slide='next'>
+									<span
+										className='carousel-control-next-icon'
+										aria-hidden='true'></span>
+									<span className='sr-only'>Next</span>
+								</a>
+							</div>
+						</Box> */}
 
-						<Box mt={2} px={1}>
+						<Box mt={2} px={1} pb={0} mb={0}>
 							<Typography variant='h6' align='center'>
 								Contact me
 							</Typography>
