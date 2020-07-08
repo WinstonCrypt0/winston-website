@@ -1,27 +1,28 @@
 .marker-text {
-    font-family: "Permanent Marker", cursive ;
-    animation: color-change 5s infinite   alternate-reverse ;
+	font-family: "Permanent Marker", cursive;
 }
 
 .blue-pink-gradient-bg {
-   background: rgb(91,70,255);
-background: linear-gradient(45deg, rgba(91,70,255,1) 0%, rgba(196,74,244,1) 47%, rgba(255,78,232,1) 100%);
+	background: #0091ea;
+	background: linear-gradient(
+		45deg,
+		rgba(91, 70, 255, 1) 5%,
+		rgba(196, 74, 244, 1) 47%,
+		rgba(255, 78, 232, 1) 95%
+	);
+	background-size: 400% 400%;
+	animation: color-change 10s infinite ease-in-out alternate-reverse;
 }
 
 @keyframes color-change {
-    0% {
-        color : rgb(0,0,50)
-    }
-    25% {
-        color : rgb(50, 0, 0)
-    }
-    50% {
-        color : rgb( 0 , 50 , 0 )
-    }
-    75% {
-        color: rgb(0,50,50 );
-    }
-    100% {
-        color: black;
-    }
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
+
