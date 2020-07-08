@@ -2,7 +2,7 @@
 	font-family: "Permanent Marker", cursive;
 }
 
-.blue-pink-gradient-bg {
+.colorful-bg {
 	background: #0091ea;
 	background: linear-gradient(
 		45deg,
@@ -25,4 +25,3 @@
 		background-position: 0% 50%;
 	}
 }
-
