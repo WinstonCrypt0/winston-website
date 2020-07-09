@@ -80,13 +80,13 @@ function Carousel() {
 							</ol>
 
 							<div className='carousel-item ' data-interval='10000'>
-								<img src={guitar} className='d-block h-25 w-95' alt='guitar' />
+								<img src={guitar} className='d-block h-25 ' alt='guitar' />
 								<div className='carousel-caption d-none d-md-block  '>
 									<h5 className=' p-1 carousel-custom-text'>Guitar</h5>
 								</div>
 							</div>
 							<div className='carousel-item active' data-interval='2000'>
-								<img src={piano} className='d-block h-25  w-95' alt='piano' />
+								<img src={piano} className='d-block h-25  ' alt='piano' />
 								<div className='carousel-caption d-none d-md-block  '>
 									<h5 className=' p-1 carousel-custom-text'>Piano</h5>
 								</div>
@@ -94,7 +94,7 @@ function Carousel() {
 							<div className='carousel-item'>
 								<img
 									src={robotics}
-									className='d-block  h-25 w-95'
+									className='d-block  h-25 '
 									alt='robotics'
 								/>
 								<div className='carousel-caption d-none d-md-block  '>
@@ -104,7 +104,7 @@ function Carousel() {
 							<div className='carousel-item'>
 								<img
 									src={computers}
-									className='d-block  h-25 w-95'
+									className='d-block  h-25 '
 									alt='computers'
 								/>
 								<div className='carousel-caption d-none d-md-block  '>
@@ -112,7 +112,7 @@ function Carousel() {
 								</div>
 							</div>
 							<div className='carousel-item'>
-								<img src={soccer} className='d-block  h-25 w-95' alt='soccer' />
+								<img src={soccer} className='d-block  h-25 ' alt='soccer' />
 								<div className='carousel-caption d-none d-md-block  '>
 									<h5 className=' p-1 carousel-custom-text'>Soccer</h5>
 								</div>
