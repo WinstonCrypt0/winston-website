@@ -8,8 +8,8 @@ jobs:
     name: Build and Deploy
     runs-on: ubuntu-latest
     steps:
-    - name: Deploy to Firebase
-      uses: doonstore/firebase-deploy@v1
+    - name: CI-Firebase-hosting
+      uses: Danushka96/actions@v1.0
       with:
         params: --only hosting
       env:
