@@ -1,5 +1,7 @@
 name: Build and Deploy
 on:
+  commit_comment:
+  
   push:
     branches:
     - main
