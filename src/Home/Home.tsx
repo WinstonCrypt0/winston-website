@@ -164,7 +164,7 @@ function Carousel() {
 										<img src={piano} className='d-block h-30  ' alt='piano' />
 									),
 									title: "Piano",
-									description: `I have been playing the piano since I was 5 years old and have been studying with Dr. Heewon Kwon at the Colburn School`,
+									description: `I have been playing the piano since I was 5 years old and have been studying piano with Dr. Heewon Kwon at the Colburn School. I love the sound of the piano and the ability to express my feelings freely through it.`,
 								}}
 								className='carousel-item active'
 								data-interval='5000'
