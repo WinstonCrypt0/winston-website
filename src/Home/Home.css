@@ -2,6 +2,16 @@
 	font-family: "Permanent Marker", cursive;
 }
 
+.carousel-custom-text {
+	text-shadow: 2px 2px black  ;
+	   -webkit-text-stroke: 2px black;
+	   font-size: x-large ;
+	   font-weight: 700;
+font-family: sans-serif ;
+
+}
+
+
 .colorful-bg {
 	background: #0091ea;
 	background: linear-gradient(
