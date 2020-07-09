@@ -164,7 +164,7 @@ function Carousel() {
 										<img src={piano} className='d-block h-30  ' alt='piano' />
 									),
 									title: "Piano",
-									description: `I have been playing the piano since I was 5 years old and have been studying piano with Dr. Heewon Kwon. I have won many first place awards including in the Concerto and Open Solo categories at the Southwestern Youth Music Festival, CAPMT III Sonata Competition, and the Classic Alive Artists competition at UCLA`,
+									description: `I have been playing the piano since I was 5 years old and have been studying with Dr. Heewon Kwon at the Colburn School`,
 								}}
 								className='carousel-item active'
 								data-interval='5000'
