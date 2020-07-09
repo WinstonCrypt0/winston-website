@@ -24,6 +24,8 @@ font-family: sans-serif ;
 	animation: color-change 10s infinite ease-in-out alternate-reverse;
 }
 
+img { margin : auto }
+
 @keyframes color-change {
 	0% {
 		background-position: 0% 50%;

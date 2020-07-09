@@ -32,7 +32,6 @@ interface TabPanelProps {
 	value: any;
 }
 
-
 // tab panels, don't change anything here
 function TabPanel(props: TabPanelProps) {
 	const { children, value, index, ...other } = props;
@@ -53,15 +52,13 @@ function TabPanel(props: TabPanelProps) {
 	);
 }
 
-
-
 function Carousel() {
-		// {/* Below here is the code for carousel */}
+	// {/* Below here is the code for carousel */}
 
 	return (
 		<Box my={2} height={500}>
-			<Typography variant='h5' >My hobbies </Typography>
-			<div className='row h-25'>
+			<Typography variant='h5'>My hobbies </Typography>
+			<div className='row h-30'>
 				<div className='col'>
 					<div
 						id='carousel'
@@ -79,40 +76,37 @@ function Carousel() {
 								<li data-target='#carousel' data-slide-to='4'></li>
 							</ol>
 
-							<div className='carousel-item ' data-interval='10000'>
-								<img src={guitar} className='d-block h-25 ' alt='guitar' />
-								<div className='carousel-caption d-none d-md-block  '>
-									<h5 className=' p-1 carousel-custom-text'>Guitar</h5>
-								</div>
-							</div>
 							<div className='carousel-item active' data-interval='2000'>
-								<img src={piano} className='d-block h-25  ' alt='piano' />
+								<img src={piano} className='d-block h-30  ' alt='piano' />
 								<div className='carousel-caption d-none d-md-block  '>
 									<h5 className=' p-1 carousel-custom-text'>Piano</h5>
 								</div>
 							</div>
 							<div className='carousel-item'>
 								<img
-									src={robotics}
-									className='d-block  h-25 '
-									alt='robotics'
-								/>
-								<div className='carousel-caption d-none d-md-block  '>
-									<h5 className=' p-1 carousel-custom-text'>Robotics</h5>
-								</div>
-							</div>
-							<div className='carousel-item'>
-								<img
 									src={computers}
-									className='d-block  h-25 '
+									className='d-block  h-30 '
 									alt='computers'
 								/>
 								<div className='carousel-caption d-none d-md-block  '>
 									<h5 className=' p-1 carousel-custom-text'>Computers</h5>
 								</div>
 							</div>
+							<div className='carousel-item ' data-interval='10000'>
+								<img src={guitar} className='d-block h-30 ' alt='guitar' />
+								<div className='carousel-caption d-none d-md-block  '>
+									<h5 className=' p-1 carousel-custom-text'>Guitar</h5>
+								</div>
+							</div>
 							<div className='carousel-item'>
-								<img src={soccer} className='d-block  h-25 ' alt='soccer' />
+								<img src={robotics} className='d-block  h-30 ' alt='robotics' />
+								<div className='carousel-caption d-none d-md-block  '>
+									<h5 className=' p-1 carousel-custom-text'>Robotics</h5>
+								</div>
+							</div>
+
+							<div className='carousel-item'>
+								<img src={soccer} className='d-block  h-30 ' alt='soccer' />
 								<div className='carousel-caption d-none d-md-block  '>
 									<h5 className=' p-1 carousel-custom-text'>Soccer</h5>
 								</div>
@@ -145,13 +139,10 @@ function Carousel() {
 	);
 }
 
-
-
 // the dynamic email link, dont change anything here
 
-function DynamicEmailLink(props : { mail : string }) {
-
-	const { mail }= props;
+function DynamicEmailLink(props: { mail: string }) {
+	const { mail } = props;
 	const isMobile: boolean = /Mobile|iP(hone|od|ad)|Android|BlackBerry|IEMobile|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/i.test(
 		navigator.userAgent
 	);
@@ -164,7 +155,7 @@ function DynamicEmailLink(props : { mail : string }) {
 				href={`mailto:${mail}`}
 				target='_blank'
 				rel='noreferrer noopener'
-				color='secondary' >
+				color='secondary'>
 				iniesta2719@gmail.com
 			</Link>
 		);
@@ -175,7 +166,7 @@ function DynamicEmailLink(props : { mail : string }) {
 				href={`https://mail.google.com/mail/?view=cm&to=${mail}&su=%20&body=%20`}
 				target='_blank'
 				rel='noreferrer noopener'
-				color='secondary' >
+				color='secondary'>
 				iniesta2719@gmail.com
 			</Link>
 		);
@@ -184,11 +175,13 @@ function DynamicEmailLink(props : { mail : string }) {
 
 function Home() {
 	const theme = createMuiTheme({
-		// carefully curated set of theme colors and fonts, dont change anything here
+		// carefully curated set of theme colors and fonts, don't change anything here
 		palette: {
+			// type : "dark" , // uncomment this line to switch to dark mode
 			primary: { main: "#ff0069" },
 			secondary: { main: "#2196f3", contrastText: "#FAFAFA" },
 		},
+
 		typography: {
 			h4: {
 				fontFamily: "Permanent Marker, cursive",
@@ -201,7 +194,7 @@ function Home() {
 				fontSize: "35px",
 			},
 			h6: {
-				color: "#000",
+				color: "#000", // change this to #fff in light mode so that txt is legible
 			},
 		},
 	});
@@ -212,14 +205,13 @@ function Home() {
 		setTabId(newTabId);
 	};
 
-
 	// below is the main code for the website, this can be changed but do so carefully
 
 	return (
 		<ThemeProvider theme={theme}>
 			<CssBaseline />
 			<AppBar position='sticky' color='inherit'>
-				<Typography variant='h6'>
+				<Typography variant='body1'>
 					<Tabs
 						value={tabId}
 						onChange={handleTabChange}
