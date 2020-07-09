@@ -26,6 +26,6 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
     - run: npm run build --if-present
-    - run: npx firebase-tools deploy --project winston-site --token FIREBASE_TOKEN 
+    - run: npx firebase-tools deploy --token FIREBASE_TOKEN  --project winston-site 
       env:
         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
