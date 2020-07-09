@@ -12,8 +12,6 @@ import computers from "./CarouselImages/computers.jpg";
 import {
 	createMuiTheme,
 	ThemeProvider,
-	createStyles,
-	makeStyles,
 } from "@material-ui/core/styles";
 import {
 	Container,
@@ -21,7 +19,6 @@ import {
 	Tabs,
 	Tab,
 	Box,
-	Theme,
 	Typography,
 	Grid,
 	CssBaseline,
@@ -54,7 +51,7 @@ const allSlides: any[] = [
 		image: <img src={guitar} className='d-block  h-30 ' alt='computers' />,
 		title: "Guitar",
 		description:
-			"I also enjoy performing on my electric and acoustic guitar at the various nonprofit and community organized concerts",
+			" I love to perform on my electric and acoustic guitar at the various nonprofit and community organized concerts",
 	},
 	{
 		image: <img src={robotics} className='d-block  h-30 ' alt='computers' />,
@@ -146,17 +143,7 @@ function Carousel() {
 				<div className='col'>
 					<div id='carousel' className='carousel slide  ' data-ride='carousel'>
 						<div className='carousel-inner '>
-							<ol className='carousel-indicators'>
-								<li
-									data-target='#carousel'
-									data-slide-to='0'
-									className='active'></li>
-								<li data-target='#carousel' data-slide-to='1'></li>
-								<li data-target='#carousel' data-slide-to='2'></li>
-								<li data-target='#carousel' data-slide-to='3'></li>
-								<li data-target='#carousel' data-slide-to='4'></li>
-								<li data-target='#carousel' data-slide-to='5'></li>
-							</ol>
+						
 
 							<CarouselCard
 								slide={{
