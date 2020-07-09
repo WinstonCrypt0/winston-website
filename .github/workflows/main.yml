@@ -1,16 +1,20 @@
 name: Customized Deploy
 on:
+  pull_request:
+    branches:
+    - master
   push:
     branches:
     - master
+    - release/*
+
 jobs:
   main:
     name: Build and Deploy
     runs-on: ubuntu-latest
     steps:
     - name: CI-Firebase-hosting
-      uses: Danushka96/actions@v1.0
-      with:
-        params: --only hosting
+      run : npm run build && npx firebase-tools deploy --token FIREBASE_TOKEN
+
       env:
         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
