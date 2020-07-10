@@ -45,7 +45,7 @@ const allSlides: any[] = [
 	{
 		image: <img src={computers} className='d-block  h-30 ' alt='computers' />,
 		title: "Computers",
-		description: " I love trying my hand at new software",
+		description: " My love of technology and STEM has opened up new opportunities for me including organizing events through Hack Club and working with people who have as much passion as I do. I'm channeling all this passion into working and collaborating in projects focused mainly to change people's lives around the world. ",
 	},
 	{
 		image: <img src={guitar} className='d-block  h-30 ' alt='computers' />,
