@@ -1,6 +1,7 @@
 {
   "hosting": {
     "public": "build",
+    
     "site": "winston-iskandar",
     "ignore": [
       "firebase.json",

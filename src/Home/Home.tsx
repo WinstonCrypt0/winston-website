@@ -9,7 +9,10 @@ import robotics from "./CarouselImages/robotics.jpg";
 import soccer from "./CarouselImages/soccer.jpg";
 import computers from "./CarouselImages/computers.jpg";
 
-import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import {
+	createMuiTheme,
+	ThemeProvider,
+} from "@material-ui/core/styles";
 import {
 	Container,
 	AppBar,
@@ -32,6 +35,38 @@ interface TabPanelProps {
 	value: any;
 }
 
+interface slides {
+	image: any;
+	title: string;
+	description: string;
+}
+
+const allSlides: any[] = [
+	{
+		image: <img src={computers} className='d-block  h-30 ' alt='computers' />,
+		title: "Computers",
+		description: " I love trying my hand at new software",
+	},
+	{
+		image: <img src={guitar} className='d-block  h-30 ' alt='computers' />,
+		title: "Guitar",
+		description:
+			" I love to perform on my electric and acoustic guitar at the various nonprofit and community organized concerts",
+	},
+	{
+		image: <img src={robotics} className='d-block  h-30 ' alt='computers' />,
+		title: "Robotics",
+		description:
+			"I really enjoy robotics and lead my team to qualify for the 2019 California State VEX Championship by winning the Skills award at the VEX Robotics Competition at Google Headquarters.",
+	},
+	{
+		image: <img src={soccer} className='d-block  h-30 ' alt='computers' />,
+		title: "Soccer",
+		description:
+			"I play competitive soccer for the elite team in the club Steel United FC and have lead my team for a top spot in the California Regional League. I also lead my team to victory in the National Cup tournament.",
+	},
+];
+
 // tab panels, don't change anything here
 function TabPanel(props: TabPanelProps) {
 	const { children, value, index, ...other } = props;
@@ -52,65 +87,85 @@ function TabPanel(props: TabPanelProps) {
 	);
 }
 
+function CarouselCard(props: { slide: slides, className : string}) {
+	return (
+		<Box className={props.className} >
+			<Card raised>
+				{/* Using grids to evenly space out everything things gracefully stack on top of each other on mobile devices */}
+				<CardContent>
+					<Grid
+						container
+						direction='row'
+						justify='center'
+						alignItems='center'
+						spacing={4}>
+						<Grid
+							item
+							sm={6}
+							container
+							direction='row'
+							justify='center'
+							alignItems='center' >
+							<CardMedia>{props.slide.image}</CardMedia>
+						</Grid>
+						<Grid
+							item
+							sm={6}
+							container
+							direction='column'
+							justify='center'
+							alignItems='center'>
+							<Box width={0.7}>
+								<Typography align='center' variant='h6' color='textPrimary'>
+									{/* The title and subtitles below  */}
+									<b>{props.slide.title}</b>
+								</Typography>
+
+								<Typography align='center' variant='body2'>
+									{props.slide.description}
+								</Typography>
+							</Box>
+						</Grid>
+					</Grid>
+				</CardContent>
+			</Card>
+		</Box>
+	);
+}
+
 function Carousel() {
 	// {/* Below here is the code for carousel */}
 
 	return (
-		<Box my={2} height={500}>
-			<Typography variant='h5'>My hobbies </Typography>
+		<Box my={2} height='auto'>
+			<Typography variant='h5'>My Interests </Typography>
 			<div className='row h-30'>
 				<div className='col'>
-					<div
-						id='carousel'
-						className='carousel slide bg-dark '
-						data-ride='carousel'>
+					<div id='carousel' className='carousel slide  ' data-ride='carousel'>
 						<div className='carousel-inner '>
-							<ol className='carousel-indicators'>
-								<li
-									data-target='#carousel'
-									data-slide-to='0'
-									className='active'></li>
-								<li data-target='#carousel' data-slide-to='1'></li>
-								<li data-target='#carousel' data-slide-to='2'></li>
-								<li data-target='#carousel' data-slide-to='3'></li>
-								<li data-target='#carousel' data-slide-to='4'></li>
-							</ol>
+						
 
-							<div className='carousel-item active' data-interval='2000'>
-								<img src={piano} className='d-block h-30  ' alt='piano' />
-								<div className='carousel-caption d-none d-md-block  '>
-									<h5 className=' p-1 carousel-custom-text'>Piano</h5>
-								</div>
-							</div>
-							<div className='carousel-item'>
-								<img
-									src={computers}
-									className='d-block  h-30 '
-									alt='computers'
-								/>
-								<div className='carousel-caption d-none d-md-block  '>
-									<h5 className=' p-1 carousel-custom-text'>Computers</h5>
-								</div>
-							</div>
-							<div className='carousel-item ' data-interval='10000'>
-								<img src={guitar} className='d-block h-30 ' alt='guitar' />
-								<div className='carousel-caption d-none d-md-block  '>
-									<h5 className=' p-1 carousel-custom-text'>Guitar</h5>
-								</div>
-							</div>
-							<div className='carousel-item'>
-								<img src={robotics} className='d-block  h-30 ' alt='robotics' />
-								<div className='carousel-caption d-none d-md-block  '>
-									<h5 className=' p-1 carousel-custom-text'>Robotics</h5>
-								</div>
-							</div>
+							<CarouselCard
+								slide={{
+									image: (
+										<img src={piano} className='d-block h-30  ' alt='piano' />
+									),
+									title: "Piano",
+									description: `I have been playing the piano since I was 5 years old and have been studying piano with Dr. Heewon Kwon at the Colburn School. I love the sound of the piano and the ability to express my feelings freely through it.`,
+								}}
+								className='carousel-item active'
+								data-interval='5000'
+							/>
 
-							<div className='carousel-item'>
-								<img src={soccer} className='d-block  h-30 ' alt='soccer' />
-								<div className='carousel-caption d-none d-md-block  '>
-									<h5 className=' p-1 carousel-custom-text'>Soccer</h5>
-								</div>
-							</div>
+							{allSlides.map((slide, key) => {
+								return (
+									<CarouselCard
+										className='carousel-item'
+										key={key}
+										slide={slide}
+									/>
+								);
+							})}
 						</div>
 						<a
 							className='carousel-control-prev'
