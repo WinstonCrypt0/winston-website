@@ -272,8 +272,8 @@ function Home() {
 						onChange={handleTabChange}
 						centered
 						aria-label='Tabs'>
-						<Tab label='Home' />
-						<Tab label='More' />
+						<Tab label='About' />
+						<Tab label='Achievements' />
 					</Tabs>
 				</Typography>
 			</AppBar>
