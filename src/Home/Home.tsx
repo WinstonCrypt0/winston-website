@@ -116,7 +116,7 @@ function CarouselCard(props: { slide: slides, className : string}) {
 							direction='column'
 							justify='center'
 							alignItems='center'>
-							<Box width={0.5}>
+							<Box width={0.7}>
 								<Typography align='center' variant='h6' color='textPrimary'>
 									{/* The title and subtitles below  */}
 									<b>{props.slide.title}</b>
@@ -252,6 +252,9 @@ function Home() {
 			h6: {
 				color: "#000", // change this to #fff in light mode so that txt is legible
 			},
+			body1: {
+				fontSize : "25px"
+			}
 		},
 	});
 
