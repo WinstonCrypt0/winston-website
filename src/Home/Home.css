@@ -1,3 +1,10 @@
+li,ul {
+	font-family: 'Roboto Slab', serif;
+	font-size : 24px ;
+
+}
+
+
 .marker-text {
 	font-family: "Permanent Marker", cursive;
 }

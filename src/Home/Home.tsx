@@ -110,12 +110,13 @@ function CarouselCard(props: { slide: slides, className : string}) {
 						</Grid>
 						<Grid
 							item
-							sm={6}
+							sm={8}
+							md={6}
 							container
 							direction='column'
 							justify='center'
 							alignItems='center'>
-							<Box width={0.7}>
+							<Box width={0.5}>
 								<Typography align='center' variant='h6' color='textPrimary'>
 									{/* The title and subtitles below  */}
 									<b>{props.slide.title}</b>
@@ -143,7 +144,7 @@ function Carousel() {
 				<div className='col'>
 					<div id='carousel' className='carousel slide  ' data-ride='carousel'>
 						<div className='carousel-inner '>
-						
+
 
 							<CarouselCard
 								slide={{
@@ -246,7 +247,7 @@ function Home() {
 			h5: {
 				fontFamily: "Dancing Script, cursive",
 				fontWeight: 800,
-				fontSize: "35px",
+				fontSize: "38px",
 			},
 			h6: {
 				color: "#000", // change this to #fff in light mode so that txt is legible
@@ -273,7 +274,7 @@ function Home() {
 						centered
 						aria-label='Tabs'>
 						<Tab label='About' />
-						<Tab label='Achievements' />
+						<Tab label='More' />
 					</Tabs>
 				</Typography>
 			</AppBar>
@@ -343,6 +344,51 @@ function Home() {
 						</Box>
 
 						<Carousel />
+
+						<Box my={2} p={1}>
+							<ul>
+								<Typography variant='h5'>Achievements </Typography>
+
+								<li>
+									{" "}
+									I have been playing the piano since I was 5 years old and have
+									been studying piano with Dr. Heewon Kwon at the{" "}
+									<a
+										href='https://www.colburnschool.edu/'
+										target='_blank'
+										rel='noopener noreferrer'>
+										{" "}
+										Colburn School{" "}
+									</a>
+								</li>
+								<li>
+									{" "}
+									In 2013, I made my concert debut performing with the Dream
+									Orchestra in the ‘Night of Concerti’ concert. Since then, I
+									have performed many solo and duo concertos with the Dream
+									Orchestra in Zipper Hall at the{" "}
+									<a
+										href='https://www.colburnschool.edu/'
+										target='_blank'
+										rel='noopener noreferrer'>
+										{" "}
+										Colburn School{" "}
+									</a>
+								</li>
+								<li>
+									{" "}
+									In July 2016, I performed on the same stage with professional
+									pianist Lang Lang in the Walt Disney Concert Hall.{" "}
+								</li>
+								<li>
+									{" "}
+									I have won many first place awards including in the Concerto
+									and Open Solo categories at the Southwestern Youth Music
+									Festival, CAPMT III Sonata Competition, and the Classic Alive
+									Artists competition at UCLA.{" "}
+								</li>
+							</ul>
+						</Box>
 
 						{/* contact details below  */}
 
