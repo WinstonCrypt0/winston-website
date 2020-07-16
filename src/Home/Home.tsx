@@ -323,7 +323,7 @@ function Home() {
 												<b>Winston Iskandar</b>
 											</Typography>
 											<Typography align='center' variant='h6'>
-												Born in 2006
+												Student, Pianist, and Software Developer
 											</Typography>
 											<Typography align='center' variant='h6'>
 												From Los Angeles, CA
