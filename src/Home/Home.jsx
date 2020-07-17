@@ -259,7 +259,7 @@ function Home() {
 										color='textPrimary'
 										className='marker-text'>
 										{/* The title and subtitles below  */}
-										<b>Winston Iskandar</b>
+										<b>Winston Iskanda</b>
 									</Typography>
 
 									<Typography align='center' variant='h6'>
