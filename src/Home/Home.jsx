@@ -278,9 +278,7 @@ function Home() {
 										{/* The title and subtitles below  */}
 										<b>Winston Iskandar</b>
 									</Typography>
-									<Typography align='center' variant='h6'>
-										Born in 2006
-									</Typography>
+								
 									<Typography align='center' variant='h6'>
 										From Los Angeles, CA
 									</Typography>
