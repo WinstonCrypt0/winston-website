@@ -14,10 +14,6 @@ import {
 	ThemeProvider,
 } from "@material-ui/core/styles";
 import {
-	Container,
-	AppBar,
-	Tabs,
-	Tab,
 	Box,
 	Typography,
 	Grid,
@@ -26,22 +22,19 @@ import {
 	CardMedia,
 	Link,
 	CardContent,
-	Slide,
 } from "@material-ui/core";
 
-interface TabPanelProps {
-	children?: React.ReactNode;
-	index: any;
-	value: any;
-}
 
-interface slides {
-	image: any;
-	title: string;
-	description: string;
-}
 
-const allSlides: any[] = [
+
+
+
+
+
+
+
+
+const allSlides  = [
 	{
 		image: <img src={computers} className='d-block  h-30 ' alt='computers' />,
 		title: "Computers",
@@ -67,27 +60,10 @@ const allSlides: any[] = [
 	},
 ];
 
-// tab panels, don't change anything here
-function TabPanel(props: TabPanelProps) {
-	const { children, value, index, ...other } = props;
 
-	return (
-		<div
-			role='tabpanel'
-			hidden={value !== index}
-			id={`wrapped-tabpanel-${index}`}
-			aria-labelledby={`wrapped-tab-${index}`}
-			{...other}>
-			{value === index && (
-				<Slide direction='up' in={true}>
-					<Box p={3}> {children}</Box>
-				</Slide>
-			)}
-		</div>
-	);
-}
 
-function CarouselCard(props: { slide: slides, className : string}) {
+
+function CarouselCard(props ) {
 	return (
 		<Box className={props.className} >
 			<Card raised>
@@ -197,9 +173,9 @@ function Carousel() {
 
 // the dynamic email link, dont change anything here
 
-function DynamicEmailLink(props: { mail: string }) {
+function DynamicEmailLink(props) {
 	const { mail } = props;
-	const isMobile: boolean = /Mobile|iP(hone|od|ad)|Android|BlackBerry|IEMobile|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/i.test(
+	const isMobile = /Mobile|iP(hone|od|ad)|Android|BlackBerry|IEMobile|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/i.test(
 		navigator.userAgent
 	);
 
@@ -258,160 +234,131 @@ function Home() {
 		},
 	});
 
-	const [tabId, setTabId] = React.useState(0);
-
-	const handleTabChange = (evt: any, newTabId: any) => {
-		setTabId(newTabId);
-	};
-
 	// below is the main code for the website, this can be changed but do so carefully
 
 	return (
 		<ThemeProvider theme={theme}>
 			<CssBaseline />
-			<AppBar position='sticky' color='inherit'>
-				<Typography variant='body1'>
-					<Tabs
-						value={tabId}
-						onChange={handleTabChange}
-						centered
-						aria-label='Tabs'>
-						<Tab label='About' />
-						<Tab label='More' />
-					</Tabs>
-				</Typography>
-			</AppBar>
-			<Container color='inherit'>
-				<TabPanel value={tabId} index={0}>
-					<Box component='span' mx={1} mt={1} px={1}>
-						<Box mx='auto'>
-							<Card className='colorful-bg' raised>
-								{/* Using grids to evenly space out everything things gracefully stack on top of each other on mobile devices */}
-								<CardContent>
-									<Grid
-										container
-										direction='row'
-										justify='center'
-										alignItems='center'
-										spacing={4}>
-										<Grid
-											item
-											sm={6}
-											container
-											direction='row'
-											justify='center'
-											alignItems='center'>
-											<CardMedia>
-												{/* This is the image path with alt text  */}
-												{/* to change image, change avatar.png in folder to something else  */}
-												<img src={avatar} alt='Winston Iskandar' />
-											</CardMedia>
-										</Grid>
-										<Grid
-											item
-											sm={6}
-											container
-											direction='column'
-											justify='center'
-											alignItems='center'>
-											<Typography
-												align='center'
-												variant='h4'
-												color='textPrimary'
-												className='marker-text'>
-												{/* The title and subtitles below  */}
-												<b>Winston Iskandar</b>
-											</Typography>
-											<Typography align='center' variant='h6'>
-												Student, Pianist, and Software Developer
-											</Typography>
-											<Typography align='center' variant='h6'>
-												From Los Angeles, CA
-											</Typography>
-										</Grid>
-									</Grid>
-								</CardContent>
-							</Card>
-						</Box>
+			<Box component='span' mx={1} mt={1} px={1}>
+				<Box mx='auto'>
+					<Card className='colorful-bg' raised>
+						{/* Using grids to evenly space out everything things gracefully stack on top of each other on mobile devices */}
+						<CardContent>
+							<Grid
+								container
+								direction='row'
+								justify='center'
+								alignItems='center'
+								spacing={4}>
+								<Grid
+									item
+									sm={6}
+									container
+									direction='row'
+									justify='center'
+									alignItems='center'>
+									<CardMedia>
+										{/* This is the image path with alt text  */}
+										{/* to change image, change avatar.png in folder to something else  */}
+										<img src={avatar} alt='Winston Iskandar' />
+									</CardMedia>
+								</Grid>
+								<Grid
+									item
+									sm={6}
+									container
+									direction='column'
+									justify='center'
+									alignItems='center'>
+									<Typography
+										align='center'
+										variant='h4'
+										color='textPrimary'
+										className='marker-text'>
+										{/* The title and subtitles below  */}
+										<b>Winston Iskandar</b>
+									</Typography>
 
-						<Box mt={3} p={1}>
-							<Typography variant='h5'>About Me </Typography>
-							{/* The about paragraph is below, you can change it  */}
-							<Typography variant='body1'>
-								Hi, I’m Winston and I am very passionate about Piano, Guitar,
-								Robotics, Soccer, and Computer science! I’ve always had a
-								passion for STEM and Engineering. Ever since I was a little kid,
-								I have always loved playing with Lego’s and contraptions.
-								Technology fascinates me because the world revolves around it!
-							</Typography>
-						</Box>
+									<Typography align='center' variant='h6'>
+										From Los Angeles, CA
+									</Typography>
+								</Grid>
+							</Grid>
+						</CardContent>
+					</Card>
+				</Box>
 
-						<Carousel />
+				<Box mt={3} p={1}>
+					<Typography variant='h5'>About Me </Typography>
+					{/* The about paragraph is below, you can change it  */}
+					<Typography variant='body1'>
+						Hi, I’m Winston and I am very passionate about Piano, Guitar,
+						Robotics, Soccer, and Computer science! I’ve always had a passion
+						for STEM and Engineering. Ever since I was a little kid, I have
+						always loved playing with Lego’s and contraptions. Technology
+						fascinates me because the world revolves around it!
+					</Typography>
+				</Box>
 
-						<Box my={2} p={1}>
-							<ul>
-								<Typography variant='h5'>Achievements </Typography>
+				<Carousel />
 
-								<li>
-									{" "}
-									I have been playing the piano since I was 5 years old and have
-									been studying piano with Dr. Heewon Kwon at the{" "}
-									<a
-										href='https://www.colburnschool.edu/'
-										target='_blank'
-										rel='noopener noreferrer'>
-										{" "}
-										Colburn School{" "}
-									</a>
-								</li>
-								<li>
-									{" "}
-									In 2013, I made my concert debut performing with the Dream
-									Orchestra in the ‘Night of Concerti’ concert. Since then, I
-									have performed many solo and duo concertos with the Dream
-									Orchestra in Zipper Hall at the{" "}
-									<a
-										href='https://www.colburnschool.edu/'
-										target='_blank'
-										rel='noopener noreferrer'>
-										{" "}
-										Colburn School{" "}
-									</a>
-								</li>
-								<li>
-									{" "}
-									In July 2016, I performed on the same stage with professional
-									pianist Lang Lang in the Walt Disney Concert Hall.{" "}
-								</li>
-								<li>
-									{" "}
-									I have won many first place awards including in the Concerto
-									and Open Solo categories at the Southwestern Youth Music
-									Festival, CAPMT III Sonata Competition, and the Classic Alive
-									Artists competition at UCLA.{" "}
-								</li>
-							</ul>
-						</Box>
+				<Box my={2} p={1}>
+					<ul>
+						<Typography variant='h5'>Achievements </Typography>
 
-						{/* contact details below  */}
+						<li>
+							{" "}
+							I have been playing the piano since I was 5 years old and have
+							been studying piano with Dr. Heewon Kwon at the{" "}
+							<a
+								href='https://www.colburnschool.edu/'
+								target='_blank'
+								rel='noopener noreferrer'>
+								{" "}
+								Colburn School{" "}
+							</a>
+						</li>
+						<li>
+							{" "}
+							In 2013, I made my concert debut performing with the Dream
+							Orchestra in the ‘Night of Concerti’ concert. Since then, I have
+							performed many solo and duo concertos with the Dream Orchestra in
+							Zipper Hall at the{" "}
+							<a
+								href='https://www.colburnschool.edu/'
+								target='_blank'
+								rel='noopener noreferrer'>
+								{" "}
+								Colburn School{" "}
+							</a>
+						</li>
+						<li>
+							{" "}
+							In July 2016, I performed on the same stage with professional
+							pianist Lang Lang in the Walt Disney Concert Hall.{" "}
+						</li>
+						<li>
+							{" "}
+							I have won many first place awards including in the Concerto and
+							Open Solo categories at the Southwestern Youth Music Festival,
+							CAPMT III Sonata Competition, and the Classic Alive Artists
+							competition at UCLA.{" "}
+						</li>
+					</ul>
+				</Box>
 
-						<Box mt={2} px={1} pb={0} mb={0}>
-							<Typography variant='h6' align='center'>
-								Contact me
-							</Typography>
-							<Typography variant='body1' align='center'>
-								{/* change the email id below */}
-								Email me at <DynamicEmailLink mail='iniesta2719@gmail.com' />
-							</Typography>
-						</Box>
-					</Box>
-				</TabPanel>
+				{/* contact details below  */}
 
-				<TabPanel value={tabId} index={1}>
-					{/* second tab content below  */}
-					<b> Coming Soon... till then explore the Home tab </b>
-				</TabPanel>
-			</Container>
+				<Box mt={2} px={1} pb={0} mb={0}>
+					<Typography variant='h6' align='center'>
+						Contact me
+					</Typography>
+					<Typography variant='body1' align='center'>
+						{/* change the email id below */}
+						Email me at <DynamicEmailLink mail='iniesta2719@gmail.com' />
+					</Typography>
+				</Box>
+			</Box>
 		</ThemeProvider>
 	);
 }
