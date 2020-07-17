@@ -3,16 +3,13 @@ import React from "react";
 import "./Home.css";
 
 import avatar from "./avatar.png";
-import guitar from "./CarouselImages/guitar.jpg";
-import piano from "./CarouselImages/piano.jpg";
-import robotics from "./CarouselImages/robotics.jpg";
-import soccer from "./CarouselImages/soccer.jpg";
-import computers from "./CarouselImages/computers.jpg";
+import guitar from "./CarouselImages/guitar.webp";
+import piano from "./CarouselImages/piano.webp";
+import robotics from "./CarouselImages/robotics.webp";
+import soccer from "./CarouselImages/soccer.webp";
+import computers from "./CarouselImages/computers.webp";
 
-import {
-	createMuiTheme,
-	ThemeProvider,
-} from "@material-ui/core/styles";
+import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import {
 	Box,
 	Typography,
@@ -24,21 +21,12 @@ import {
 	CardContent,
 } from "@material-ui/core";
 
-
-
-
-
-
-
-
-
-
-
-const allSlides  = [
+const allSlides = [
 	{
 		image: <img src={computers} className='d-block  h-30 ' alt='computers' />,
 		title: "Computers",
-		description: " My love of technology and STEM has opened up new opportunities for me including organizing events through Hack Club and working with people who have as much passion as I do. I'm channeling all this passion into working and collaborating in projects focused mainly to change people's lives around the world. ",
+		description:
+			" My love of technology and STEM has opened up new opportunities for me including organizing events through Hack Club and working with people who have as much passion as I do. I'm channeling all this passion into working and collaborating in projects focused mainly to change people's lives around the world. ",
 	},
 	{
 		image: <img src={guitar} className='d-block  h-30 ' alt='computers' />,
@@ -60,12 +48,9 @@ const allSlides  = [
 	},
 ];
 
-
-
-
-function CarouselCard(props ) {
+function CarouselCard(props) {
 	return (
-		<Box className={props.className} >
+		<Box className={props.className}>
 			<Card raised>
 				{/* Using grids to evenly space out everything things gracefully stack on top of each other on mobile devices */}
 				<CardContent>
@@ -81,7 +66,7 @@ function CarouselCard(props ) {
 							container
 							direction='row'
 							justify='center'
-							alignItems='center' >
+							alignItems='center'>
 							<CardMedia>{props.slide.image}</CardMedia>
 						</Grid>
 						<Grid
@@ -120,8 +105,6 @@ function Carousel() {
 				<div className='col'>
 					<div id='carousel' className='carousel slide  ' data-ride='carousel'>
 						<div className='carousel-inner '>
-
-
 							<CarouselCard
 								slide={{
 									image: (
@@ -229,8 +212,8 @@ function Home() {
 				color: "#000", // change this to #fff in light mode so that txt is legible
 			},
 			body1: {
-				fontSize : "25px"
-			}
+				fontSize: "25px",
+			},
 		},
 	});
 
