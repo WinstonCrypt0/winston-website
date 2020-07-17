@@ -15,14 +15,10 @@ import {
 import Home from "./Home/Home";
 import Performances from "./Performances/Performances";
 
-interface TabPanelProps {
-	children?: React.ReactNode;
-	index: any;
-	value: any;
-}
+
 
 // tab panels, don't change anything here
-function TabPanel(props: TabPanelProps) {
+function TabPanel(props ) {
 	const { children, value, index, ...other } = props;
 
 	return (
@@ -54,7 +50,7 @@ function App() {
 	// states regarding active tab
 	const [tabId, setTabId] = React.useState(0);
 
-	const handleTabChange = (evt: any, newTabId: any) => {
+	const handleTabChange = (evt, newTabId) => {
 		setTabId(newTabId);
 	};
 

@@ -34,13 +34,7 @@ import {
 
 
 
-interface slides {
-	image: any;
-	title: string;
-	description: string;
-}
-
-const allSlides: any[] = [
+const allSlides  = [
 	{
 		image: <img src={computers} className='d-block  h-30 ' alt='computers' />,
 		title: "Computers",
@@ -69,7 +63,7 @@ const allSlides: any[] = [
 
 
 
-function CarouselCard(props: { slide: slides, className : string}) {
+function CarouselCard(props ) {
 	return (
 		<Box className={props.className} >
 			<Card raised>
@@ -179,9 +173,9 @@ function Carousel() {
 
 // the dynamic email link, dont change anything here
 
-function DynamicEmailLink(props: { mail: string }) {
+function DynamicEmailLink(props) {
 	const { mail } = props;
-	const isMobile: boolean = /Mobile|iP(hone|od|ad)|Android|BlackBerry|IEMobile|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/i.test(
+	const isMobile = /Mobile|iP(hone|od|ad)|Android|BlackBerry|IEMobile|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/i.test(
 		navigator.userAgent
 	);
 
